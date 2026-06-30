@@ -96,12 +96,6 @@ Kluczowe kategorie pluginów:
 - **Wykrywanie VPN:** Włączone — gracze używający VPN/proxy są blokowani
 - **Maks. graczy:** 20
 
-### Znani gracze
-
-- reaperq
-- Whopper_Junior2
-- Low_Death_Gaming
-
 ---
 
 ## 6. Przegląd komend
@@ -113,7 +107,6 @@ Gracze mają dostęp do wybranego zestawu komend przez LuckPerms, głównie z Es
 | `/home`, `/sethome` | Osobiste domy |
 | `/tpa`, `/tpahere`, `/tpaccept`, `/tpdeny` | Prośby o teleportację |
 | `/spawn` | Powrót do spawnu |
-| `/kit` | Zestawy startowe (narzędzia itp.) |
 | `/msg`, `/reply` | Prywatne wiadomości |
 | `/mail` | Wiadomości offline |
 | `/back` | Powrót do ostatniego miejsca śmierci |
