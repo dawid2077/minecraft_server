@@ -109,4 +109,4 @@ minecraft-server/
 
 ---
 
-> 🧱 **minecraft.reaperq.pl** · Survival · PvP · Polska 🇵🇱
+> 🧱 Survival · PvP · Polska 🇵🇱
