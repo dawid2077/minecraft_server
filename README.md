@@ -1,38 +1,112 @@
-# Serwer Minecraft
+# 🧱 Minecraft Survival
 
-> Prywatny serwer survivalowy działający na Purpur 1.21.7 na Oracle Cloud (aarch64).
+> **IP:** `minecraft.reaperq.pl` · **Wersja:** 1.21.7 · **Oprogramowanie:** [Purpur](https://purpurmc.org/) · **Tryb:** Survival (PvP 🗡️)
 
-## Szybkie linki
+---
+
+## ⚡ Szybkie informacje
+
+| | |
+|---|---|
+| 🖥️ **IP serwera** | `minecraft.reaperq.pl` |
+| 🎮 **Wersja** | 1.21.7 (kompatybilny wstecz przez ViaVersion) |
+| 🧩 **Oprogramowanie** | Purpur (fork Paper) |
+| 🎯 **Tryb gry** | Survival — PvP włączone |
+| 🟢 **Poziom trudności** | Łatwy |
+| 🌍 **Granica świata** | ±2000 bloków |
+| 🚫 **Wymiary** | Tylko Overworld (Nether/End wyłączone) |
+| 👥 **Maks. graczy** | 20 |
+| 📍 **Kraj** | Tylko Polska |
+| 🛡️ **Uwierzytelnianie** | AuthMe (tryb offline) |
+| 🗺️ **Mapa WWW** | BlueMap (live 3D) |
+
+---
+
+## 📋 Spis treści
+
+- [Informacje o serwerze](#-szybkie-informacje)
+- [Jak zacząć?](#-jak-zacząć)
+- [Komendy](#-komendy)
+- [Wydarzenia](developers/events.md)
+- [Dokumentacja developerska](#-dokumentacja-developerska)
+- [Szybkie fakty](#-szybkie-fakty)
+
+---
+
+## 🚀 Jak zacząć?
+
+| Krok | Opis |
+|---|---|
+| 1️⃣ | Dodaj serwer: **`minecraft.reaperq.pl`** (port domyślny) |
+| 2️⃣ | Zarejestruj się: `/register <hasło> <hasło>` |
+| 3️⃣ | Zaloguj się przy kolejnych wizytach: `/login <hasło>` |
+| 4️⃣ | Weź zestaw startowy: `/kit tools` |
+| 5️⃣ | Znajdź miejsce na bazę i ustaw dom: `/sethome` |
+
+---
+
+## 🎮 Komendy
+
+| Komenda | Działanie |
+|---|---|
+| `/home` / `/sethome` | Teleportacja do twojego domu |
+| `/tpa <gracz>` | Wyślij prośbę o teleportację |
+| `/spawn` | Powrót do spawnu |
+| `/back` | Powrót do ostatniego miejsca śmierci |
+| `/kit tools` | Zestaw startowy narzędzi |
+| `/msg <gracz> <tekst>` | Prywatna wiadomość |
+| `/rules` | Zasady serwera |
+| `/mail send <gracz> <tekst>` | Wiadomość offline |
+| `/list` | Gracze online |
+
+> Pełna lista komend w [dokumentacji](developers/main.md#6-przegląd-komend).
+
+---
+
+## 📚 Dokumentacja developerska
+
+Szczegółowa dokumentacja architektury serwera, pluginów i konfiguracji:
 
 | Dokument | Opis |
 |---|---|
-| [`developers/main.md`](developers/main.md) | Przegląd serwera — architektura, konfiguracja |
-| [`developers/plugins.md`](developers/plugins.md) | Pełny indeks pluginów z opisami i funkcjami |
-| [`developers/modes.md`](developers/modes.md) | Tryby gry i jak działają |
-| [`developers/rules.md`](developers/rules.md) | Zasady serwera |
-| [`developers/spawn.md`](developers/spawn.md) | Obszar spawnu, ochrona barierą i granica świata |
+| [`developers/main.md`](developers/main.md) | 🏗️ Architektura serwera — host, stos, kopia zapasowa |
+| [`developers/plugins.md`](developers/plugins.md) | 🔌 Pełny indeks pluginów z opisami |
+| [`developers/modes.md`](developers/modes.md) | 🎯 Tryby gry i progresja |
+| [`developers/rules.md`](developers/rules.md) | ⚖️ Regulamin serwera |
+| [`developers/spawn.md`](developers/spawn.md) | 🏠 Spawn i granica świata |
+| [`developers/events.md`](developers/events.md) | 🎪 Wydarzenia na serwerze |
 
-## Struktura repozytorium
+### Struktura repozytorium
 
 ```
 minecraft-server/
-├── README.md             ← Jesteś tutaj
-├── developers/
-│   ├── main.md           — Architektura i przegląd
-│   ├── plugins.md        — Dokumentacja pluginów
-│   ├── modes.md          — Tryby gry
-│   ├── rules.md          — Zasady i regulamin
-│   └── spawn.md          — Spawn i granica świata
+├── README.md
+└── developers/
+    ├── main.md       — Architektura i przegląd
+    ├── plugins.md    — Dokumentacja pluginów
+    ├── modes.md      — Tryby gry
+    ├── rules.md      — Zasady i regulamin
+    ├── spawn.md      — Spawn i granica świata
+    └── events.md     — Wydarzenia
 ```
 
-## Szybkie fakty
+---
 
-- **Oprogramowanie:** [Purpur](https://purpurmc.org/) 1.21.7
-- **Tryb gry:** Survival (PvP włączone)
-- **Poziom trudności:** Łatwy
-- **Granica świata:** ±2000 bloków we wszystkich kierunkach
-- **Wymiary:** Tylko Overworld (Nether/End wyłączone)
-- **Uwierzytelnianie:** Tryb offline z AuthMe
-- **Anty-grief:** CoreProtect + EssentialsXProtect
-- **Mapa WWW:** BlueMap (live 3D)
-- **Gracze:** Maks. 20
+## 🔍 Szybkie fakty
+
+| Fakt | Szczegóły |
+|---|---|
+| 🗺️ **Seed świata** | Losowy (ukryty przed graczami) |
+| 🔨 **Pre-generacja** | Chunky — promień 2000 |
+| 🛡️ **Ochrona spawnu** | 50 bloków |
+| ⛏️ **Anti-Xray** | Włączony (tryb 2) |
+| 🚫 **VPN/Proxy** | Zablokowane |
+| 📦 **Kopie zapasowe** | Codziennie 06:00 GMT, 7 dni wstecz |
+| 🧹 **Anty-grief** | CoreProtect + EssentialsXProtect |
+| ⚔️ **Combat tag** | 10 sekund |
+| 🛌 **Pomijanie nocy** | 1 gracz wystarczy (BetterSleeping) |
+| 🤖 **Czat z Discordem** | DiscordSRV (wkrótce) |
+
+---
+
+> 🧱 **minecraft.reaperq.pl** · Survival · PvP · Polska 🇵🇱
