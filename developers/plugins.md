@@ -20,12 +20,9 @@ Kręgosłup funkcji rozgrywkowych serwera. Zapewnia ekosystem komend, z których
 - `/home` / `/sethome` — Ustawianie i teleportacja do osobistych domów
 - `/tpa` / `/tpahere` / `/tpaccept` / `/tpdeny` — System próśb o teleportację
 - `/spawn` — Teleportacja do spawnu świata
-- `/kit tools` — Startowy zestaw narzędzi (opóźnienie: 10s)
 - `/back` — Powrót do ostatniego miejsca śmierci
 - `/msg` / `/reply` — Prywatne wiadomości
-- `/mail` — Wiadomości offline
 - `/rules` — Wyświetlenie zasad serwera
-- `/motd` — Wiadomość powitalna serwera
 
 ---
 
