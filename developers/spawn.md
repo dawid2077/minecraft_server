@@ -1,116 +1,116 @@
-# Spawn Area & World Border
+# Obszar spawnu i granica świata
 
-> Documentation on the spawn protection zone, world border, and how the world is configured for survival.
+> Dokumentacja strefy ochrony spawnu, granicy świata i konfiguracji świata dla trybu survival.
 
 ---
 
-## 1. Spawn Area
+## 1. Obszar spawnu
 
-The spawn is the central hub where all players appear on first join or when using `/spawn`.
+Spawn to centralne centrum, w którym wszyscy gracze pojawiają się przy pierwszym dołączeniu lub po użyciu `/spawn`.
 
-### Spawn Protection
+### Ochrona spawnu
 
-- **Protection radius:** 50 blocks from world spawn (0, 0)
-- **Who can build:** Only operators with `essentials.protect` or equivalent permission
-- **What's protected:** Block breaking, block placement, interactions with containers
-- **Purpose:** Prevent spawn griefing and preserve the spawn area for community use
+- **Promień ochrony:** 50 bloków od spawnu świata (0, 0)
+- **Kto może budować:** Tylko operatorzy z permisją `essentials.protect` lub równoważną
+- **Co jest chronione:** Niszczenie bloków, stawianie bloków, interakcje z pojemnikami
+- **Cel:** Zapobieganie griefingowi spawnu i zachowanie obszaru spawnu do użytku społeczności
 
-### Spawn Features
+### Funkcje spawnu
 
-| Feature | Details |
+| Funkcja | Szczegóły |
 |---|---|
-| **Spawn point** | World spawn at (0, ~64, 0) |
-| **Community builds** | Spawn area is reserved for community infrastructure |
-| **Information** | Holograms at spawn display rules and info for new players |
-| **Spawn on join** | Disabled (players spawn at their last logout location) |
-| **Spawn on death** | Standard — players respawn at world spawn |
+| **Punkt spawnu** | Spawn świata na (0, ~64, 0) |
+| **Budowle społeczności** | Obszar spawnu jest zarezerwowany dla infrastruktury społecznościowej |
+| **Informacje** | Hologramy przy spawnie wyświetlają zasady i informacje dla nowych graczy |
+| **Spawn przy dołączeniu** | Wyłączony (gracze pojawiają się w miejscu ostatniego wylogowania) |
+| **Spawn po śmierci** | Standardowy — gracze odradzają się na spawnie świata |
 
-### Teleport Commands
+### Komendy teleportacji
 
-| Command | Behavior |
+| Komenda | Działanie |
 |---|---|
-| `/spawn` | Teleports you to world spawn |
-| `/sethome` | Set a personal home point (use this at your base) |
-| `/home` | Teleport to your personal home |
-| `/back` | Return to your last death location |
+| `/spawn` | Teleportuje cię do spawnu świata |
+| `/sethome` | Ustaw osobisty punkt domu (użyj tego w swojej bazie) |
+| `/home` | Teleportuj się do swojego osobistego domu |
+| `/back` | Wróć do ostatniego miejsca śmierci |
 
 ---
 
-## 2. World Border
+## 2. Granica świata
 
-The world is bounded by a **hard border** at ±2000 blocks on both the X and Z axes.
+Świat jest ograniczony **twardą granicą** na ±2000 bloków na osiach X i Z.
 
-### What This Means
+### Co to oznacza
 
-- The playable area is a 4000×4000 block square centered on (0, 0)
-- Players cannot walk, fly, or teleport past the border
-- Any build, exploration, or activity must happen within this area
+- Obszar gry to kwadrat 4000×4000 bloków wyśrodkowany na (0, 0)
+- Gracze nie mogą chodzić, latać ani teleportować się poza granicę
+- Każda budowa, eksploracja czy aktywność musi odbywać się w tym obszarze
 
-### Why a Border?
+### Dlaczego granica?
 
-- Server resources: Smaller world = smaller disk usage, faster backups, less memory
-- Player density: Keeps players closer together for a more social experience
-- Resource management: Easy to pre-generate the full world with Chunky
+- Zasoby serwera: Mniejszy świat = mniejsze użycie dysku, szybsze kopie zapasowe, mniej pamięci
+- Gęstość graczy: Utrzymuje graczy bliżej siebie dla bardziej społecznego doświadczenia
+- Zarządzanie zasobami: Łatwo pre-generować cały świat za pomocą Chunky
 
 ---
 
-## 3. World Pre-generation
+## 3. Pre-generacja świata
 
-All chunks within the border are pre-generated to ensure smooth gameplay.
+Wszystkie chunki w obrębie granicy są pre-generowane, aby zapewnić płynną rozgrywkę.
 
-| Detail | Value |
+| Szczegół | Wartość |
 |---|---|
-| **Tool** | Chunky |
-| **Radius** | 2000 blocks |
-| **Dimensions** | Overworld only |
-| **Status** | Background task (players can play during generation) |
+| **Narzędzie** | Chunky |
+| **Promień** | 2000 bloków |
+| **Wymiary** | Tylko Overworld |
+| **Status** | Zadanie w tle (gracze mogą grać podczas generowania) |
 
-Pre-generation means:
-- No chunk-loading lag when exploring new areas
-- Terrain, caves, and structures are already calculated
-- Anti-Xray is effective immediately in all areas
+Pre-generacja oznacza:
+- Brak opóźnień przy ładowaniu chunków podczas eksploracji nowych obszarów
+- Teren, jaskinie i struktury są już obliczone
+- Anti-Xray działa natychmiastowo we wszystkich obszarach
 
 ---
 
-## 4. World Configuration Summary
+## 4. Podsumowanie konfiguracji świata
 
-| Setting | Value |
+| Ustawienie | Wartość |
 |---|---|
-| **Border radius** | 2000 blocks |
-| **Border center** | (0, 0) — world spawn |
-| **Spawn radius** | 50 blocks protected |
-| **View distance** | Default |
-| **Monster spawns** | Enabled (Easy difficulty) |
-| **Animal spawns** | Enabled |
-| **Anti-Xray** | Engine mode 2 (hides ores) |
-| **Nether** | Disabled |
-| **End** | Disabled |
-| **World seed** | Random (hidden from players) |
+| **Promień granicy** | 2000 bloków |
+| **Centrum granicy** | (0, 0) — spawn świata |
+| **Promień spawnu** | 50 bloków chronionych |
+| **Odległość widoku** | Domyślna |
+| **Spawning potworów** | Włączony (łatwy poziom) |
+| **Spawning zwierząt** | Włączony |
+| **Anti-Xray** | Tryb silnika 2 (ukrywa rudy) |
+| **Nether** | Wyłączony |
+| **End** | Wyłączony |
+| **Seed świata** | Losowy (ukryty przed graczami) |
 
 ---
 
-## 5. Visiting Other Areas
+## 5. Odwiedzanie innych obszarów
 
-### Using `/tpa` to Visit Other Players
+### Używanie `/tpa` do odwiedzania innych graczy
 
-The teleport request system allows players to visit each other's bases:
+System próśb o teleportację pozwala graczom odwiedzać bazy innych:
 
-1. Request: `/tpa <playername>`
-2. Target accepts: `/tpaccept <playername>`
-3. You teleport to their location
+1. Prośba: `/tpa <nazwagracza>`
+2. Cel akceptuje: `/tpaccept <nazwagracza>`
+3. Teleportujesz się do ich lokalizacji
 
-### Using `/home` to Return to Your Base
+### Używanie `/home` do powrotu do swojej bazy
 
-1. Set your base: `/sethome` (at your chosen location)
-2. Return anytime: `/home`
+1. Ustaw bazę: `/sethome` (w wybranej lokalizacji)
+2. Wróć w dowolnym momencie: `/home`
 
 ---
 
-## 6. Map
+## 6. Mapa
 
-A live 3D web map is available via BlueMap. It renders the entire world and updates in real-time.
+Żywa mapa 3D online jest dostępna przez BlueMap. Renderuje cały świat i aktualizuje się w czasie rzeczywistym.
 
-**Features:**
-- See builds, terrain, and player locations on the map
-- Navigate the world from a bird's-eye view
-- Useful for finding landmarks and planning exploration routes
+**Funkcje:**
+- Zobacz budowle, teren i lokalizacje graczy na mapie
+- Nawiguj po świecie z lotu ptaka
+- Przydatne do znajdowania punktów orientacyjnych i planowania tras eksploracji

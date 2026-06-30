@@ -1,262 +1,262 @@
-# Plugin Index
+# Indeks pluginów
 
-> Complete list of all plugins installed on the server, with descriptions, features, and relevant configuration notes.
+> Pełna lista wszystkich pluginów zainstalowanych na serwerze, z opisami, funkcjami i istotnymi uwagami konfiguracyjnymi.
 
 ---
 
-## Gameplay & Core
+## Rozgrywka i podstawy
 
 ### EssentialsX (2.22.0)
 
-The backbone of the server's gameplay features. Provides the command ecosystem that players interact with daily.
+Kręgosłup funkcji rozgrywkowych serwera. Zapewnia ekosystem komend, z których gracze korzystają na co dzień.
 
-**Modules installed:**
-- **EssentialsX** — Core commands: homes, warps, kits, teleportation, messaging, mail
-- **EssentialsXChat** — Chat formatting with colors and placeholders
-- **EssentialsXSpawn** — Spawn point management
-- **EssentialsXProtect** — Anti-grief protections (block placement logging, restricted areas)
+**Zainstalowane moduły:**
+- **EssentialsX** — Podstawowe komendy: domy, warp, kity, teleportacja, wiadomości, mail
+- **EssentialsXChat** — Formatowanie czatu z kolorami i placeholderami
+- **EssentialsXSpawn** — Zarządzanie punktem spawnu
+- **EssentialsXProtect** — Ochrona przed griefingiem (logowanie stawiania bloków, strefy zastrzeżone)
 
-**Key features:**
-- `/home` / `/sethome` — Set and teleport to personal homes
-- `/tpa` / `/tpahere` / `/tpaccept` / `/tpdeny` — Teleport request system
-- `/spawn` — Teleport to world spawn
-- `/kit tools` — Starter tool kit (delay: 10s)
-- `/back` — Return to last death location
-- `/msg` / `/reply` — Private messaging
-- `/mail` — Offline messaging
-- `/rules` — Display server rules
-- `/motd` — Server welcome message
+**Kluczowe funkcje:**
+- `/home` / `/sethome` — Ustawianie i teleportacja do osobistych domów
+- `/tpa` / `/tpahere` / `/tpaccept` / `/tpdeny` — System próśb o teleportację
+- `/spawn` — Teleportacja do spawnu świata
+- `/kit tools` — Startowy zestaw narzędzi (opóźnienie: 10s)
+- `/back` — Powrót do ostatniego miejsca śmierci
+- `/msg` / `/reply` — Prywatne wiadomości
+- `/mail` — Wiadomości offline
+- `/rules` — Wyświetlenie zasad serwera
+- `/motd` — Wiadomość powitalna serwera
 
 ---
 
 ### VeinMiner (2.4.0)
 
-Allows efficient mining of entire ore veins with a single break. Activated by sneaking while mining.
+Umożliwia efektywne wydobywanie całych żył rud jednym uderzeniem. Aktywowany przez skradanie się podczas kopania.
 
-- **Activation:** Sneak (configurable)
-- **Pattern:** Default vein-mining pattern (connected blocks of the same type)
-- **Max vein size:** 64 blocks
-- **Experience & items:** Collected at source position
-- **Disabled game modes:** Creative, Spectator
-- **Hunger modifier:** Each block costs 2.5 food saturation
+- **Aktywacja:** Skradanie (konfigurowalne)
+- **Wzór:** Domyślny wzór żyły (połączone bloki tego samego typu)
+- **Maks. rozmiar żyły:** 64 bloki
+- **Doświadczenie i przedmioty:** Zbierane w miejscu źródłowym
+- **Wyłączone tryby:** Kreatywny, Widz
+- **Modyfikator głodu:** Każdy blok kosztuje 2.5 nasycenia jedzenia
 
 ---
 
 ### BetterSleeping (1.5)
 
-Improves the night-skipping mechanic. Only **1 player** needs to sleep to skip the night, making it practical for small player counts.
+Usprawnia mechanikę pomijania nocy. Tylko **1 gracz** musi spać, aby pominąć noc, co czyni to praktycznym przy małej liczbie graczy.
 
-- **Players needed to sleep:** 1
-- Works for any number of online players
+- **Gracze potrzebni do spania:** 1
+- Działa dla dowolnej liczby graczy online
 
 ---
 
 ### SimpleScore (4.2.0)
 
-Customizable scoreboard displayed on the right side of the player's screen.
+Konfigurowalna tablica wyników wyświetlana po prawej stronie ekranu gracza.
 
-- **Update frequency:** Every tick (20x/second)
-- **Async processing:** Enabled (avoids lag)
-- **Multi-world support:** Different scoreboards can be configured per world/regex pattern
+- **Częstotliwość aktualizacji:** Co tick (20x/sekundę)
+- **Przetwarzanie asynchroniczne:** Włączone (zapobiega opóźnieniom)
+- **Wsparcie wielu światów:** Różne tablice wyników mogą być skonfigurowane dla świata/wzorca regex
 
 ---
 
 ### TAB (6.1.0)
 
-Customizes the player tab list (pressing TAB) with grouping, sorting, and formatted names.
+Personalizuje listę graczy TAB (klawisz TAB) z grupowaniem, sortowaniem i formatowaniem nazw.
 
-- Player name formatting and prefix/suffix display
-- Group-based sorting
-- Header/footer customization
-- (Configuration is managed server-side — no client mod required)
+- Formatowanie nazw graczy i wyświetlanie prefiksów/sufiksów
+- Sortowanie oparte na grupach
+- Personalizacja nagłówka/stopki
+- (Konfiguracja jest zarządzana po stronie serwera — klient nie wymaga modyfikacji)
 
 ---
 
-## Security & Enforcement
+## Bezpieczeństwo i egzekwowanie
 
 ### AuthMe (6.0.0)
 
-Handles player authentication for the offline-mode server.
+Obsługuje uwierzytelnianie graczy na serwerze w trybie offline.
 
-- Players must register with a password on first join
-- Subsequent logins require the password within a timeout
-- Protects against unauthorized access on an unauthenticated server
+- Gracze muszą zarejestrować się z hasłem przy pierwszym dołączeniu
+- Kolejne logowania wymagają hasła w określonym czasie
+- Chroni przed nieautoryzowanym dostępem na nieuwierzytelnionym serwerze
 
 ---
 
 ### GrimAC (2.3.74)
 
-Anti-cheat plugin that detects and blocks unfair advantages.
+Anty-cheat pluginu, który wykrywa i blokuje nieuczciwe przewagi.
 
-- **Movement checks:** Speed, flight, timer, NoFall, etc.
-- **Combat checks:** KillAura, Reach, AutoClicker
-- **Experimental checks:** Enabled
-- **Setbacks:** Aggressive — players caught cheating are reverted to a safe position quickly
+- **Kontrole ruchu:** Szybkość, latanie, timer, NoFall itp.
+- **Kontrole walki:** KillAura, Reach, AutoClicker
+- **Kontrole eksperymentalne:** Włączone
+- **Setbacki:** Agresywne — gracze przyłapani na oszukiwaniu są szybko cofani do bezpiecznej pozycji
 
 ---
 
 ### CombatLogX (11.7.0)
 
-Prevents players from logging out to avoid PvP.
+Zapobiega wylogowywaniu się graczy w celu uniknięcia PvP.
 
-- **Tag duration:** 10 seconds after attacking/receiving damage
-- **On combat-log (quit while tagged):** Player is killed (items drop)
-- **Pets linked:** Tamed animals' damage is attributed to owner
-- **Projectile tracking:** Arrows and projectiles link back to the shooter
-- **Ignored projectiles:** Eggs, ender pearls, snowballs
+- **Czas tagowania:** 10 sekund po zaatakowaniu/otrzymaniu obrażeń
+- **Po combat-logu (wyjście podczas tagu):** Gracz umiera (przedmioty wypadają)
+- **Powiązane zwierzęta:** Obrażenia oswojonych zwierząt są przypisywane właścicielowi
+- **Śledzenie pocisków:** Strzały i pociski są powiązane ze strzelającym
+- **Ignorowane pociski:** Jajka, perły Endu, śnieżki
 
 ---
 
 ### CoreProtect (22.4)
 
-Block-level logging and rollback system.
+System logowania i rollbacku na poziomie bloków.
 
-- Logs all block placements, breaks, and interactions
-- Supports rollback of player actions (area or player-specific)
-- Lookup tool for inspecting who placed/broke what block
-- Essential for anti-grief recovery
+- Loguje wszystkie umieszczania, niszczenia i interakcje bloków
+- Obsługuje rollback akcji graczy (obszar lub konkretny gracz)
+- Narzędzie do inspekcji, kto umieścił/zniszczył dany blok
+- Niezbędny do odzyskiwania po griefingu
 
 ---
 
 ### EssentialsXProtect (2.22.0)
 
-Additional anti-grief protections bundled with EssentialsX.
+Dodatkowe zabezpieczenia przed griefingiem dołączone do EssentialsX.
 
-- Block placement blacklists
-- Explosion protection
-- Build permission checks tied to the permission system
+- Czarna lista stawianych bloków
+- Ochrona przed eksplozjami
+- Sprawdzanie permisji budowania powiązane z systemem permisji
 
 ---
 
-## Server Management
+## Zarządzanie serwerem
 
 ### LuckPerms (5.5.58)
 
-Advanced permissions management system.
+Zaawansowany system zarządzania permisjami.
 
-- Group-based permission inheritance
-- Context-aware permissions (world, server, etc.)
-- Tracks (permission sets that can be applied sequentially)
-- Storage: H2 database (local, no external DB required)
-- Server context: Global (permissions apply across all worlds)
+- Dziedziczenie permisji oparte na grupach
+- Permisje świadome kontekstu (świat, serwer itp.)
+- Tracki (zestawy permisji, które można stosować sekwencyjnie)
+- Przechowywanie: Baza danych H2 (lokalna, bez zewnętrznej bazy)
+- Kontekst serwera: Globalny (permisje dotyczą wszystkich światów)
 
 ### Maintenance (5.1.0)
 
-Toggle maintenance mode to block connections during updates or troubleshooting.
+Przełączanie trybu konserwacji w celu blokowania połączeń podczas aktualizacji lub rozwiązywania problemów.
 
-- **Toggle:** `/maintenance on` / `/maintenance off`
-- **Custom MOTD:** Changes when maintenance is active
-- **Kick message:** Customizable disconnect reason
-- **Language:** Polish (localized for target audience)
+- **Przełączanie:** `/maintenance on` / `/maintenance off`
+- **Niestandardowy MOTD:** Zmienia się, gdy konserwacja jest aktywna
+- **Wiadomość kick:** Konfigurowalny powód rozłączenia
+- **Język:** Polski (zlokalizowany dla docelowej grupy odbiorców)
 
 ### AdvancedServerList (5.8.0)
 
-Customizes the server list ping response shown in the multiplayer menu.
+Personalizuje odpowiedź ping listy serwerów wyświetlaną w menu multiplayer.
 
-- Custom MOTD with colors and formatting
-- Player count display configuration
-- Hover messages on the player count
-- Favicon support
+- Niestandardowy MOTD z kolorami i formatowaniem
+- Konfiguracja wyświetlania liczby graczy
+- Wiadomości najechania na liczbę graczy
+- Obsługa favicon
 
 ### CountryBlock
 
-Geo-restriction plugin.
+Plugin ograniczenia geograficznego.
 
-- **Mode:** Allow (only listed countries can join)
-- **Allowed:** Poland (PL)
-- **VPN detection:** Enabled — blocks connections from VPNs/proxies
-- **Kick message:** Players blocked see a country-restriction message
+- **Tryb:** Zezwól (tylko wymienione kraje mogą dołączyć)
+- **Dozwolone:** Polska (PL)
+- **Wykrywanie VPN:** Włączone — blokuje połączenia z VPN/proxy
+- **Wiadomość kick:** Gracze zablokowani widzą komunikat o ograniczeniu krajowym
 
 ---
 
-## Utility & Quality of Life
+## Narzędzia i udogodnienia
 
 ### PlaceholderAPI (2.12.2)
 
-Provides placeholder strings like `%player_name%`, `%online_players%` that other plugins can use in messages, scoreboards, and tab lists.
+Dostarcza stringi zastępcze jak `%player_name%`, `%online_players%`, które inne pluginy mogą używać w wiadomościach, tablicach wyników i listach TAB.
 
-**Plugins that use PlaceholderAPI on this server:**
+**Pluginy używające PlaceholderAPI na tym serwerze:**
 - SimpleScore
 - TAB
 - EssentialsXChat
-- DecentHolograms (if configured)
+- DecentHolograms (jeśli skonfigurowane)
 
 ---
 
 ### DecentHolograms (2.10.1)
 
-Creates floating text holograms in the world.
+Tworzy pływające tekstowe hologramy w świecie.
 
-- Used for informational displays (spawn info, rules, announcements)
-- Supports per-player visibility
-- Can use PlaceholderAPI placeholders
+- Używane do wyświetlania informacji (info o spawnie, zasady, ogłoszenia)
+- Obsługuje widoczność dla konkretnego gracza
+- Może używać placeholderów PlaceholderAPI
 
 ---
 
 ### SkinsRestorer
 
-Restores player skins in offline mode. Since the server doesn't connect to Mojang's auth servers, this plugin retrieves and applies skins from an alternative source.
+Przywraca skórki graczy w trybie offline. Ponieważ serwer nie łączy się z serwerami autoryzacyjnymi Mojanga, ten plugin pobiera i aplikuje skórki z alternatywnego źródła.
 
 ---
 
 ### spark
 
-Performance profiler and metrics tool.
+Profiler wydajności i narzędzie metryk.
 
-- CPU profiling
-- Entity and tile entity tracking
-- TPS (ticks per second) monitoring
-- Memory analysis
-- Accessible in-game with `/spark`
+- Profilowanie CPU
+- Śledzenie encji i tile entity
+- Monitorowanie TPS (ticków na sekundę)
+- Analiza pamięci
+- Dostępne w grze przez `/spark`
 
 ---
 
 ### BlueMap (5.12)
 
-Live 3D web map that renders the world in a browser.
+Żywa mapa 3D online renderująca świat w przeglądarce.
 
-- **Access:** `http://<server-ip>:8100`
-- Renders terrain, buildings, and player markers
-- Updates in real-time as the world changes
-- Version 5.12-paper (compatible with Purpur 1.21.7)
+- **Dostęp:** `http://<ip-serwera>:8100`
+- Renderuje teren, budynki i znaczniki graczy
+- Aktualizuje się w czasie rzeczywistym wraz ze zmianami świata
+- Wersja 5.12-paper (kompatybilna z Purpur 1.21.7)
 
 ---
 
 ### ViaVersion (5.10.0)
 
-Allows clients from different Minecraft versions to connect to the 1.21.7 server.
+Pozwala klientom z różnych wersji Minecrafta łączyć się z serwerem 1.21.7.
 
-- Backwards compatible — older clients can join
-- Translates protocol between versions seamlessly
+- Wstecznie kompatybilny — starsi klienci mogą dołączyć
+- Tłumaczy protokół między wersjami bezproblemowo
 
 ---
 
-## World & Environment
+## Świat i środowisko
 
 ### Chunky (1.5.3)
 
-World pre-generation tool that generates chunks without requiring player exploration.
+Narzędzie do pre-generacji świata, które generuje chunki bez konieczności eksploracji przez graczy.
 
-- **Radius:** 2000 blocks (overworld)
-- **Dimensions:** Overworld only (Nether/End disabled)
-- **Function:** Pre-generates all terrain up to the world border
-- **Status check:** `/chunky progress` (server console)
-- Runs as a background asynchronous task
+- **Promień:** 2000 bloków (overworld)
+- **Wymiary:** Tylko Overworld (Nether/End wyłączone)
+- **Funkcja:** Pre-generuje cały teren do granicy świata
+- **Sprawdzenie statusu:** `/chunky progress` (konsola serwera)
+- Działa jako asynchroniczne zadanie w tle
 
 ---
 
 ### UltimateAirdrops (2.1.0)
 
-Periodic airdrop events that spawn supply crates at random locations.
+Okresowe wydarzenia zrzutów, które spawnią skrzynie z zaopatrzeniem w losowych lokalizacjach.
 
-- Drops contain random loot
-- Visual effects mark landing zones
-- Encourages exploration and competition for resources
+- Zrzuty zawierają losowy łup
+- Efekty wizualne oznaczają strefy lądowania
+- Zachęca do eksploracji i rywalizacji o zasoby
 
 ---
 
-## Integration & Data
+## Integracja i dane
 
 ### DiscordSRV
 
-Bridges in-game chat with a Discord channel. (Requires bot token and channel ID configuration — currently pending setup.)
+Mostkuje czat w grze z kanałem Discord. (Wymaga tokena bota i konfiguracji ID kanału — obecnie oczekuje na konfigurację.)

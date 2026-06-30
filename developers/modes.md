@@ -1,112 +1,112 @@
-# Game Modes
+# Tryby gry
 
-> How the server's game modes work, what players can expect, and how specific activities are handled.
+> Jak działają tryby gry na serwerze, czego mogą się spodziewać gracze i jak obsługiwane są konkretne aktywności.
 
 ---
 
-## Primary Mode: Survival
+## Tryb główny: Survival
 
-The default game mode for all players. The world is survival-only, meaning:
+Domyślny tryb gry dla wszystkich graczy. Świat jest tylko survivalowy, co oznacza:
 
-- **Health & hunger** matter — eat to regenerate, avoid starvation
-- **Inventory management** — items drop on death
-- **Mining & building** — all standard survival mechanics
-- **Monsters** — hostile mobs spawn at night and in dark areas
-- **Difficulty:** Easy (fewer and weaker hostile mobs)
+- **Zdrowie i głód** mają znaczenie — jedz, aby regenerować, unikaj głodu
+- **Zarządzanie ekwipunkiem** — przedmioty wypadają po śmierci
+- **Kopanie i budowanie** — wszystkie standardowe mechaniki survivalu
+- **Potwory** — wrogie moby spawnią się w nocy i w ciemnych miejscach
+- **Poziom trudności:** Łatwy (mniej i słabsze wrogie moby)
 
 ### PvP
 
-Player-vs-Player combat is **enabled**. All PvP rules apply:
+Walka gracz kontra gracz jest **włączona**. Obowiązują wszystkie zasady PvP:
 
-- **Combat tag:** 10 seconds after damaging or being damaged by another player
-- **Combat logging:** If a tagged player quits, they are killed (items drop)
-- **No safe-logging:** Use `/spawn` or run to a safe distance to escape PvP
+- **Tag bojowy:** 10 sekund po zadaniu lub otrzymaniu obrażeń od innego gracza
+- **Combat logging:** Jeśli otagowany gracz wyjdzie, umiera (przedmioty wypadają)
+- **Bez bezpiecznego logowania:** Użyj `/spawn` lub ucieknij w bezpieczne miejsce, aby uniknąć PvP
 
-### Death
+### Śmierć
 
-- Items drop at death location
-- Use `/back` to return to death point
-- No keep-inventory — standard survival consequences
-
----
-
-## Administrative Game Modes
-
-These are available only to operators and authorized staff via LuckPerms permissions.
-
-### Creative (`/gamemode creative`)
-
-Full creative inventory, flight, instant block breaking, and no damage. Used for:
-
-- Building and testing
-- Spawn area construction
-- Event preparation
-- World editing and fixes
-
-### Spectator (`/gamemode spectator`)
-
-Free-flying, no-clip mode. Used for:
-
-- World inspection and troubleshooting
-- Watching players without interaction
-- Mapping and BlueMap updates
-
-### Adventure (`/gamemode adventure`)
-
-Cannot break or place blocks. Used for:
-
-- Minigames or restricted areas
-- Guided tours
-- Event worlds where building should be disabled
+- Przedmioty wypadają w miejscu śmierci
+- Użyj `/back`, aby wrócić do punktu śmierci
+- Brak keep-inventory — standardowe konsekwencje survivalu
 
 ---
 
-## World Rules
+## Administracyjne tryby gry
 
-| Setting | Value |
+Dostępne tylko dla operatorów i autoryzowanego personelu przez permisje LuckPerms.
+
+### Kreatywny (`/gamemode creative`)
+
+Pełny kreatywny ekwipunek, latanie, natychmiastowe niszczenie bloków i brak obrażeń. Używane do:
+
+- Budowania i testowania
+- Konstrukcji obszaru spawnu
+- Przygotowywania wydarzeń
+- Edycji i napraw świata
+
+### Widz (`/gamemode spectator`)
+
+Swobodne latanie, tryb bez kolizji. Używane do:
+
+- Inspekcji świata i rozwiązywania problemów
+- Obserwowania graczy bez interakcji
+- Mapowania i aktualizacji BlueMap
+
+### Przygoda (`/gamemode adventure`)
+
+Nie można niszczyć ani stawiać bloków. Używane do:
+
+- Minigier lub stref zastrzeżonych
+- Oprowadzania z przewodnikiem
+- Światów eventowych, gdzie budowanie powinno być wyłączone
+
+---
+
+## Zasady świata
+
+| Ustawienie | Wartość |
 |---|---|
-| **Default gamemode** | Survival |
-| **Force gamemode** | Off (reverts on world change) |
-| **Difficulty** | Easy |
-| **Hardcore** | Off |
-| **PvP** | Enabled |
-| **Monster spawns** | Enabled (Easy difficulty) |
-| **Animal spawns** | Enabled |
+| **Domyślny tryb gry** | Survival |
+| **Wymuszanie trybu gry** | Wył. (przywraca przy zmianie świata) |
+| **Poziom trudności** | Łatwy |
+| **Hardcore** | Wył. |
+| **PvP** | Włączone |
+| **Spawning potworów** | Włączony (łatwy poziom) |
+| **Spawning zwierząt** | Włączony |
 
 ---
 
-## Progression & Features
+## Progresja i funkcje
 
-### Early Game
+### Wczesna gra
 
-1. Join the server and register with AuthMe
-2. Use `/kit tools` for starter stone tools
-3. Use `/spawn` to return to spawn area
-4. Explore outward from spawn to claim territory
-5. Use `/sethome` at your chosen base location
+1. Dołącz do serwera i zarejestruj się przez AuthMe
+2. Użyj `/kit tools` po startowe kamienne narzędzia
+3. Użyj `/spawn`, aby wrócić do obszaru spawnu
+4. Eksploruj od spawnu, aby zająć terytorium
+5. Użyj `/sethome` w wybranej lokalizacji bazy
 
-### Mid Game
+### Środkowa gra
 
-- Enchant gear
-- Explore to the world border (±2000)
-- Collect airdrop loot from UltimateAirdrops
-- Establish farms and resource production
+- Zaklęty sprzęt
+- Eksploruj do granicy świata (±2000)
+- Zbieraj łupy ze zrzutów UltimateAirdrops
+- Załóż farmy i produkcję zasobów
 
-### End Game
+### Późna gra
 
-- Build large-scale projects
-- PvP with other established players
-- VeinMiner for efficient resource gathering
-- Decorate using slabs, stairs, and the full block palette
+- Buduj wielkoskalowe projekty
+- PvP z innymi doświadczonymi graczami
+- VeinMiner do efektywnego zbierania zasobów
+- Dekoruj używając płyt, schodów i pełnej palety bloków
 
 ---
 
-## Dimensions
+## Wymiary
 
-| Dimension | Status |
+| Wymiar | Status |
 |---|---|
-| **Overworld** | ✅ Active (world border ±2000) |
-| **Nether** | ❌ Disabled |
-| **End** | ❌ Disabled |
+| **Overworld** | ✅ Aktywny (granica świata ±2000) |
+| **Nether** | ❌ Wyłączony |
+| **End** | ❌ Wyłączony |
 
-The Nether and End dimensions are disabled to keep the world focused on survival in a single, bounded overworld. All resources must be obtained from the overworld.
+Wymiary Nether i End są wyłączone, aby skupić świat na survivalu w pojedynczym, ograniczonym overworldzie. Wszystkie zasoby muszą być pozyskiwane z overworldu.
