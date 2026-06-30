@@ -1,6 +1,6 @@
 # 🧱 Minecraft Survival
 
-> **IP:** `minecraft.reaperq.pl` · **Wersja:** 1.21.7 · **Oprogramowanie:** [Purpur](https://purpurmc.org/) · **Tryb:** Survival (PvP 🗡️)
+> **IP:** `79.76.97.43` · **Wersja:** 1.21.7 · **Oprogramowanie:** [Purpur](https://purpurmc.org/) · **Tryb:** Survival (PvP 🗡️)
 
 ---
 
@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| 🖥️ **IP serwera** | `minecraft.reaperq.pl` |
+| 🖥️ **IP serwera** | `79.76.97.43` |
 | 🎮 **Wersja** | 1.21.7 (kompatybilny wstecz przez ViaVersion) |
 | 🧩 **Oprogramowanie** | Purpur (fork Paper) |
 | 🎯 **Tryb gry** | Survival — PvP włączone |
