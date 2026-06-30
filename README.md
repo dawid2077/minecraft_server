@@ -17,6 +17,7 @@
 | 🚫 **Wymiary** | Tylko Overworld (Nether/End wyłączone) |
 | 👥 **Maks. graczy** | 20 |
 | 📍 **Kraj** | Tylko Polska |
+| 🏠 **Drużyny** | [`dlagraczy/teamy.md`](dlagraczy/teamy.md) |
 | 🛡️ **Uwierzytelnianie** | AuthMe (tryb offline) |
 | 🗺️ **Mapa WWW** | BlueMap (live 3D) |
 
@@ -27,6 +28,7 @@
 - [Informacje o serwerze](#-szybkie-informacje)
 - [Jak zacząć?](#-jak-zacząć)
 - [Komendy](#-komendy)
+- [Drużyny](dlagraczy/teamy.md)
 - [Wydarzenia](dlagraczy/events.md)
 - [Dokumentacja developerska](#-dokumentacja-developerska)
 - [Szybkie fakty](#-szybkie-fakty)
@@ -74,6 +76,7 @@ Szczegółowa dokumentacja architektury serwera, pluginów i konfiguracji:
 | [`developers/modes.md`](developers/modes.md) | 🎯 Tryby gry i progresja |
 | [`developers/rules.md`](developers/rules.md) | ⚖️ Regulamin serwera |
 | [`developers/spawn.md`](developers/spawn.md) | 🏠 Spawn i granica świata |
+| [`dlagraczy/teamy.md`](dlagraczy/teamy.md) | 🏠 Lista drużyn |
 | [`dlagraczy/events.md`](dlagraczy/events.md) | 🎪 Wydarzenia na serwerze |
 
 ### Struktura repozytorium
@@ -88,6 +91,7 @@ minecraft-server/
     ├── rules.md      — Zasady i regulamin
     ├── spawn.md      — Spawn i granica świata
     └── dlagraczy/
+        ├── teamy.md     — Drużyny
         └── events.md     — Wydarzenia
 ```
 
