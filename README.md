@@ -27,7 +27,7 @@
 - [Informacje o serwerze](#-szybkie-informacje)
 - [Jak zacząć?](#-jak-zacząć)
 - [Komendy](#-komendy)
-- [Wydarzenia](developers/events.md)
+- [Wydarzenia](dlagraczy/events.md)
 - [Dokumentacja developerska](#-dokumentacja-developerska)
 - [Szybkie fakty](#-szybkie-fakty)
 
@@ -74,7 +74,7 @@ Szczegółowa dokumentacja architektury serwera, pluginów i konfiguracji:
 | [`developers/modes.md`](developers/modes.md) | 🎯 Tryby gry i progresja |
 | [`developers/rules.md`](developers/rules.md) | ⚖️ Regulamin serwera |
 | [`developers/spawn.md`](developers/spawn.md) | 🏠 Spawn i granica świata |
-| [`developers/events.md`](developers/events.md) | 🎪 Wydarzenia na serwerze |
+| [`dlagraczy/events.md`](dlagraczy/events.md) | 🎪 Wydarzenia na serwerze |
 
 ### Struktura repozytorium
 
@@ -87,7 +87,8 @@ minecraft-server/
     ├── modes.md      — Tryby gry
     ├── rules.md      — Zasady i regulamin
     ├── spawn.md      — Spawn i granica świata
-    └── events.md     — Wydarzenia
+    └── dlagraczy/
+        └── events.md     — Wydarzenia
 ```
 
 ---
