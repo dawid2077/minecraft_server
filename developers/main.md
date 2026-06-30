@@ -1,102 +1,102 @@
-# Server Architecture
+# Architektura serwera
 
-> Technical overview of the Minecraft server infrastructure, software stack, and operational notes.
+> Przegląd techniczny infrastruktury serwera Minecraft, stosu oprogramowania i uwag operacyjnych.
 
 ---
 
-## 1. Host & Infrastructure
+## 1. Host i infrastruktura
 
-| Detail | Value |
+| Szczegół | Wartość |
 |---|---|
-| **Host type** | VM (arm64/aarch64) |
-| **OS** | Oracle Linux 9 |
-| **RAM allocated** | 8 GB |
-| **CPU cores** | 2 (arm64) |
+| **Typ hosta** | VM (arm64/aarch64) |
+| **System operacyjny** | Oracle Linux 9 |
+| **Przydzielony RAM** | 8 GB |
+| **Rdzenie CPU** | 2 (arm64) |
 | **Java** | 21 |
-| **Server dir** | `~/minecraft/` |
-| **Process manager** | tmux (session: `mc-server`) |
+| **Katalog serwera** | `~/minecraft/` |
+| **Menedżer procesów** | tmux (sesja: `mc-server`) |
 
-### JVM Flags
+### Flagii JVM
 
-The server runs with Aikar's recommended G1GC flags tuned for 2-core ARM. These minimize garbage collection lag spikes.
+Serwer działa z zalecanymi flagami Aikara dla G1GC dostrojonymi pod 2-rdzeniowy ARM. Minimalizują one opóźnienia spowodowane garbage collection.
 
-### Firewall
+### Zapora sieciowa
 
-- **Minecraft port:** TCP+UDP 25565 (firewalld + cloud firewall ingress rules)
-- **BlueMap web map:** Port 8100 (firewalld + cloud firewall)
-
----
-
-## 2. Software Stack
-
-### Server Software
-
-- **[Purpur](https://purpurmc.org/)** 1.21.7 — fork of Paper/Pufferfish with additional configuration options
-- **Offline mode:** `online-mode=false` — authentication delegated to AuthMe plugin
-
-### World Settings
-
-- **World border:** ±2000 on X and Z axes (radius 2000 from spawn)
-- **Overworld only:** Nether and End dimensions are disabled
-- **World seed:** Randomly generated, hidden from players
-- **Spawn protection:** Radius 50 blocks (Purpur managed)
-- **Anti-Xray:** Engine mode 2 enabled (hides ores as stone in unexposed chunks)
+- **Port Minecraft:** TCP+UDP 25565 (firewalld + reguły przychodzące w chmurze)
+- **Mapa WWW BlueMap:** Port 8100 (firewalld + zapora chmurowa)
 
 ---
 
-## 3. Operational Notes
+## 2. Stos oprogramowania
 
-### World Pre-generation
+### Oprogramowanie serwera
 
-The world is pre-generated using Chunky at radius 2000. This runs as a background task and does not require server downtime. Players can continue playing while generation runs.
+- **[Purpur](https://purpurmc.org/)** 1.21.7 — fork Paper/Pufferfish z dodatkowymi opcjami konfiguracyjnymi
+- **Tryb offline:** `online-mode=false` — uwierzytelnianie delegowane do pluginu AuthMe
 
-### Backups
+### Ustawienia świata
 
-- **Schedule:** Daily at 06:00 GMT
-- **Retention:** 7 days (automatic cleanup of older backups)
-- **Format:** Gzipped tarball
-- **Excludes:** Player data files (individual player inventories/positions)
-- **Location:** `~/minecraft/backups/`
-
-### Maintenance Mode
-
-The server has a maintenance mode toggle (`/maintenance on` / `/maintenance off`). When active, the MOTD changes to indicate maintenance and new connections are blocked until the mode is disabled.
-
-### Server Start / Stop
-
-- **Start:** Run `~/minecraft/start.sh` (inside tmux)
-- **Graceful stop:** Send `stop` command to server console
-- **Force stop:** Send `kill` command only if graceful stop fails
+- **Granica świata:** ±2000 na osiach X i Z (promień 2000 od spawnu)
+- **Tylko Overworld:** Wymiary Nether i End są wyłączone
+- **Seed świata:** Losowo generowany, ukryty przed graczami
+- **Ochrona spawnu:** Promień 50 bloków (zarządzane przez Purpur)
+- **Anti-Xray:** Tryb silnika 2 włączony (ukrywa rudy jako kamień w nieodkrytych chunkach)
 
 ---
 
-## 4. Plugin Ecosystem
+## 3. Uwagi operacyjne
 
-See [`plugins.md`](plugins.md) for the full plugin index.
+### Pre-generacja świata
 
-Key plugin categories:
+Świat jest pre-generowany za pomocą Chunky o promieniu 2000. Działa to jako zadanie w tle i nie wymaga przestoju serwera. Gracze mogą kontynuować grę podczas generowania.
 
-| Category | Plugins |
+### Kopie zapasowe
+
+- **Harmonogram:** Codziennie o 06:00 GMT
+- **Przechowywanie:** 7 dni (automatyczne czyszczenie starszych kopii)
+- **Format:** Spakowany tarball (gzip)
+- **Wykluczenia:** Pliki danych graczy (indywidualne ekwipunki/pozycje)
+- **Lokalizacja:** `~/minecraft/backups/`
+
+### Tryb konserwacji
+
+Serwer ma przełącznik trybu konserwacji (`/maintenance on` / `/maintenance off`). Po aktywacji MOTD zmienia się, aby wskazać konserwację, a nowe połączenia są blokowane do czasu wyłączenia trybu.
+
+### Uruchamianie / zatrzymywanie serwera
+
+- **Uruchomienie:** Wykonaj `~/minecraft/start.sh` (w tmux)
+- **Łagodne zatrzymanie:** Wyślij komendę `stop` do konsoli serwera
+- **Wymuszone zatrzymanie:** Wyślij komendę `kill` tylko jeśli łagodne zatrzymanie zawiedzie
+
+---
+
+## 4. Ekosystem pluginów
+
+Zobacz [`plugins.md`](plugins.md) po pełny indeks pluginów.
+
+Kluczowe kategorie pluginów:
+
+| Kategoria | Pluginy |
 |---|---|
-| **Core gameplay** | EssentialsX suite, VeinMiner |
-| **Security** | AuthMe, GrimAC, CoreProtect, CombatLogX |
-| **Quality of life** | BetterSleeping, SimpleScore, TAB |
-| **Server management** | LuckPerms, Maintenance, AdvancedServerList |
-| **Web/map** | BlueMap |
-| **Cross-version** | ViaVersion |
-| **World** | Chunky |
+| **Podstawowa rozgrywka** | EssentialsX, VeinMiner |
+| **Bezpieczeństwo** | AuthMe, GrimAC, CoreProtect, CombatLogX |
+| **Udogodnienia** | BetterSleeping, SimpleScore, TAB |
+| **Zarządzanie serwerem** | LuckPerms, Maintenance, AdvancedServerList |
+| **Mapa WWW** | BlueMap |
+| **Międzywersyjność** | ViaVersion |
+| **Świat** | Chunky |
 
 ---
 
-## 5. Player Access
+## 5. Dostęp graczy
 
-- **Authentication:** Players log in via AuthMe password
-- **Whitelist:** Not enforced (anyone with correct auth can join after signup)
-- **Country restriction:** Server is restricted to Poland only (via CountryBlock) — players from other countries are blocked at connection time
-- **VPN detection:** Enabled — players using VPNs/proxies are blocked
-- **Max players:** 20
+- **Uwierzytelnianie:** Gracze logują się przez hasło AuthMe
+- **Whitelista:** Niewymuszona (każdy z poprawnym auth może dołączyć po rejestracji)
+- **Ograniczenie krajowe:** Serwer jest ograniczony tylko do Polski (przez CountryBlock) — gracze z innych krajów są blokowani przy próbie połączenia
+- **Wykrywanie VPN:** Włączone — gracze używający VPN/proxy są blokowani
+- **Maks. graczy:** 20
 
-### Known Players
+### Znani gracze
 
 - reaperq
 - Whopper_Junior2
@@ -104,29 +104,29 @@ Key plugin categories:
 
 ---
 
-## 6. Commands Overview
+## 6. Przegląd komend
 
-Players have access to a curated command set through LuckPerms, primarily from EssentialsX:
+Gracze mają dostęp do wybranego zestawu komend przez LuckPerms, głównie z EssentialsX:
 
-| Command group | Description |
+| Grupa komend | Opis |
 |---|---|
-| `/home`, `/sethome` | Personal homes |
-| `/tpa`, `/tpahere`, `/tpaccept`, `/tpdeny` | Teleport requests |
-| `/spawn` | Return to spawn |
-| `/kit` | Starter kits (tools, etc.) |
-| `/msg`, `/reply` | Private messaging |
-| `/mail` | Offline messaging |
-| `/back` | Return to last death location |
-| `/list` | Online players |
-| `/help` | Command help |
-| `/rules` | Server rules |
+| `/home`, `/sethome` | Osobiste domy |
+| `/tpa`, `/tpahere`, `/tpaccept`, `/tpdeny` | Prośby o teleportację |
+| `/spawn` | Powrót do spawnu |
+| `/kit` | Zestawy startowe (narzędzia itp.) |
+| `/msg`, `/reply` | Prywatne wiadomości |
+| `/mail` | Wiadomości offline |
+| `/back` | Powrót do ostatniego miejsca śmierci |
+| `/list` | Gracze online |
+| `/help` | Pomoc komend |
+| `/rules` | Zasady serwera |
 
-### Administrative Commands
+### Komendy administracyjne
 
-Admin commands are gated behind LuckPerms permissions. Available to ops/admins:
+Komendy admina są chronione przez permisje LuckPerms. Dostępne dla opów/adminów:
 
-- `/maintenance` — Toggle maintenance mode
-- `/coreprotect` — Block inspection and rollback
-- `/lp` — LuckPerms permission management
-- `/gamemode` — Change game mode
-- `/vanish` — Become invisible
+- `/maintenance` — Przełącz tryb konserwacji
+- `/coreprotect` — Inspekcja bloków i rollback
+- `/lp` — Zarządzanie permisjami LuckPerms
+- `/gamemode` — Zmiana trybu gry
+- `/vanish` — Niewidzialność

@@ -1,38 +1,38 @@
-# Minecraft Server
+# Serwer Minecraft
 
-> Private survival server running Purpur 1.21.7 on Oracle Cloud (aarch64).
+> Prywatny serwer survivalowy działający na Purpur 1.21.7 na Oracle Cloud (aarch64).
 
-## Quick Links
+## Szybkie linki
 
-| Document | Description |
+| Dokument | Opis |
 |---|---|
-| [`developers/main.md`](developers/main.md) | Server overview — architecture, setup, and architecture |
-| [`developers/plugins.md`](developers/plugins.md) | Complete plugin index with descriptions and features |
-| [`developers/modes.md`](developers/modes.md) | Game modes and how they work |
-| [`developers/rules.md`](developers/rules.md) | Server rules |
-| [`developers/spawn.md`](developers/spawn.md) | Spawn area, barrier protection, and world border |
+| [`developers/main.md`](developers/main.md) | Przegląd serwera — architektura, konfiguracja |
+| [`developers/plugins.md`](developers/plugins.md) | Pełny indeks pluginów z opisami i funkcjami |
+| [`developers/modes.md`](developers/modes.md) | Tryby gry i jak działają |
+| [`developers/rules.md`](developers/rules.md) | Zasady serwera |
+| [`developers/spawn.md`](developers/spawn.md) | Obszar spawnu, ochrona barierą i granica świata |
 
-## Repo Structure
+## Struktura repozytorium
 
 ```
 minecraft-server/
-├── README.md             ← You are here
+├── README.md             ← Jesteś tutaj
 ├── developers/
-│   ├── main.md           — Architecture & overview
-│   ├── plugins.md        — Plugin documentation
-│   ├── modes.md          — Game modes
-│   ├── rules.md          — Rules & policies
-│   └── spawn.md          — Spawn & world border
+│   ├── main.md           — Architektura i przegląd
+│   ├── plugins.md        — Dokumentacja pluginów
+│   ├── modes.md          — Tryby gry
+│   ├── rules.md          — Zasady i regulamin
+│   └── spawn.md          — Spawn i granica świata
 ```
 
-## Quick Facts
+## Szybkie fakty
 
-- **Software:** [Purpur](https://purpurmc.org/) 1.21.7
-- **Gamemode:** Survival (PvP enabled)
-- **Difficulty:** Easy
-- **World border:** ±2000 blocks in all directions
-- **Dimensions:** Overworld only (Nether/End disabled)
-- **Authentication:** Offline mode with AuthMe
-- **Anti-grief:** CoreProtect + EssentialsXProtect
-- **Web map:** BlueMap (live 3D)
-- **Players:** 20 max
+- **Oprogramowanie:** [Purpur](https://purpurmc.org/) 1.21.7
+- **Tryb gry:** Survival (PvP włączone)
+- **Poziom trudności:** Łatwy
+- **Granica świata:** ±2000 bloków we wszystkich kierunkach
+- **Wymiary:** Tylko Overworld (Nether/End wyłączone)
+- **Uwierzytelnianie:** Tryb offline z AuthMe
+- **Anty-grief:** CoreProtect + EssentialsXProtect
+- **Mapa WWW:** BlueMap (live 3D)
+- **Gracze:** Maks. 20
