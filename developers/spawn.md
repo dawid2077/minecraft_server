@@ -8,20 +8,24 @@
 
 Spawn to centralne centrum, w którym wszyscy gracze pojawiają się przy pierwszym dołączeniu lub po użyciu `/spawn`.
 
-### Ochrona spawnu
+### Ochrona spawnu (WorldGuard)
 
-- **Promień ochrony:** 50 bloków od spawnu świata (0, 0)
-- **Kto może budować:** Tylko operatorzy z permisją `essentials.protect` lub równoważną
-- **Co jest chronione:** Niszczenie bloków, stawianie bloków, interakcje z pojemnikami
-- **Cel:** Zapobieganie griefingowi spawnu i zachowanie obszaru spawnu do użytku społeczności
+Strefa 50×50 bloków wokół (0, 0) chroniona przez WorldGuard:
 
-### Funkcje spawnu
+- **Wymiary:** od -25 do 25 w X/Z, od 0 do 320 w Y
+- **PvP:** ❌ Zablokowane — nie można walczyć na spawnie
+- **Niszczenie bloków:** ❌ Zablokowane
+- **Stawianie bloków:** ❌ Zablokowane
+- **OP bypass:** ❌ Wyłączony — ochrona działa na wszystkich
+
+### Ustawienia serwera
 
 | Funkcja | Szczegóły |
 |---|---|
 | **Punkt spawnu** | Spawn świata na (0, ~64, 0) |
-| **Budowle społeczności** | Obszar spawnu jest zarezerwowany dla infrastruktury społecznościowej |
-| **Informacje** | Hologramy przy spawnie wyświetlają zasady i informacje dla nowych graczy |
+| **Render distance** | 32 chunki (max) |
+| **Command blocks** | Włączone |
+| **Ochrona vanilla** | `spawn-protection=50` (w tle, WorldGuard nadrzędny) |
 | **Spawn przy dołączeniu** | Wyłączony (gracze pojawiają się w miejscu ostatniego wylogowania) |
 | **Spawn po śmierci** | Standardowy — gracze odradzają się na spawnie świata |
 
@@ -30,45 +34,41 @@ Spawn to centralne centrum, w którym wszyscy gracze pojawiają się przy pierws
 | Komenda | Działanie |
 |---|---|
 | `/spawn` | Teleportuje cię do spawnu świata |
-| `/sethome` | Ustaw osobisty punkt domu (użyj tego w swojej bazie) |
+| `/sethome` | Ustaw osobisty punkt domu |
 | `/home` | Teleportuj się do swojego osobistego domu |
-| `/back` | Wróć do ostatniego miejsca śmierci |
+| `/tpa <gracz>` | Wyślij prośbę o teleportację do gracza |
+| `/back` | ❌ Wyłączone |
+| `/echest` | Otwiera ender chest (dla wszystkich) |
 
 ---
 
 ## 2. Granica świata
 
-Świat jest ograniczony **twardą granicą** na ±2000 bloków na osiach X i Z.
+Świat jest ograniczony **twardą granicą** 2000×2000 bloków (radius 1000 od 0,0 na X i Z).
 
 ### Co to oznacza
 
-- Obszar gry to kwadrat 4000×4000 bloków wyśrodkowany na (0, 0)
+- Obszar gry to kwadrat 2000×2000 bloków wyśrodkowany na (0, 0)
 - Gracze nie mogą chodzić, latać ani teleportować się poza granicę
-- Każda budowa, eksploracja czy aktywność musi odbywać się w tym obszarze
+- Wszystkie 16 129 chunków w obrębie granicy jest pre-generowanych
 
 ### Dlaczego granica?
 
 - Zasoby serwera: Mniejszy świat = mniejsze użycie dysku, szybsze kopie zapasowe, mniej pamięci
 - Gęstość graczy: Utrzymuje graczy bliżej siebie dla bardziej społecznego doświadczenia
-- Zarządzanie zasobami: Łatwo pre-generować cały świat za pomocą Chunky
 
 ---
 
 ## 3. Pre-generacja świata
 
-Wszystkie chunki w obrębie granicy są pre-generowane, aby zapewnić płynną rozgrywkę.
+Wszystkie chunki w obrębie granicy są pre-generowane (100% ukończenia).
 
 | Szczegół | Wartość |
 |---|---|
 | **Narzędzie** | Chunky |
-| **Promień** | 2000 bloków |
-| **Wymiary** | Tylko Overworld |
-| **Status** | Zadanie w tle (gracze mogą grać podczas generowania) |
-
-Pre-generacja oznacza:
-- Brak opóźnień przy ładowaniu chunków podczas eksploracji nowych obszarów
-- Teren, jaskinie i struktury są już obliczone
-- Anti-Xray działa natychmiastowo we wszystkich obszarach
+| **Promień** | 1000 bloków (16 129 chunków) |
+| **Wymiary** | Tylko Overworld (Nether i End wyłączone) |
+| **Status** | ✅ Zakończone |
 
 ---
 
@@ -76,41 +76,20 @@ Pre-generacja oznacza:
 
 | Ustawienie | Wartość |
 |---|---|
-| **Promień granicy** | 2000 bloków |
-| **Centrum granicy** | (0, 0) — spawn świata |
-| **Promień spawnu** | 50 bloków chronionych |
-| **Odległość widoku** | Domyślna |
-| **Spawning potworów** | Włączony (łatwy poziom) |
-| **Spawning zwierząt** | Włączony |
-| **Anti-Xray** | Tryb silnika 2 (ukrywa rudy) |
-| **Nether** | Wyłączony |
-| **End** | Wyłączony |
-| **Seed świata** | Losowy (ukryty przed graczami) |
+| **Granica świata** | 2000×2000 bloków (radius 1000) |
+| **Seed** | `2800725041837543666` (nowy od 2026-07-01) |
+| **Stary seed** | `11195220106425106596` |
+| **Pre-generacja** | 16 129 chunków (100%) |
+| **Ochrona spawnu** | WorldGuard + vanilla spawn-protection |
+| **Render distance** | 32 chunki |
+| **Command blocks** | Włączone |
+| **Anti-Xray** | Tryb silnika 2 |
+| **Nether** | ❌ Wyłączony |
+| **End** | ❌ Wyłączony |
+| **PvP na spawnie** | ❌ Zablokowane |
 
 ---
 
-## 5. Odwiedzanie innych obszarów
+## 5. Mapa
 
-### Używanie `/tpa` do odwiedzania innych graczy
-
-System próśb o teleportację pozwala graczom odwiedzać bazy innych:
-
-1. Prośba: `/tpa <nazwagracza>`
-2. Cel akceptuje: `/tpaccept <nazwagracza>`
-3. Teleportujesz się do ich lokalizacji
-
-### Używanie `/home` do powrotu do swojej bazy
-
-1. Ustaw bazę: `/sethome` (w wybranej lokalizacji)
-2. Wróć w dowolnym momencie: `/home`
-
----
-
-## 6. Mapa
-
-Żywa mapa 3D online jest dostępna przez BlueMap. Renderuje cały świat i aktualizuje się w czasie rzeczywistym.
-
-**Funkcje:**
-- Zobacz budowle, teren i lokalizacje graczy na mapie
-- Nawiguj po świecie z lotu ptaka
-- Przydatne do znajdowania punktów orientacyjnych i planowania tras eksploracji
+Żywa mapa 3D online przez BlueMap (port 8100). Renderuje cały świat i aktualizuje się w czasie rzeczywistym.

@@ -15,6 +15,8 @@
 | **Java** | 21 |
 | **Katalog serwera** | `~/minecraft/` |
 | **Menedżer procesów** | tmux (sesja: `mc-server`) |
+| **Render distance** | 32 chunki (max) |
+| **Command blocks** | Włączone |
 
 ### Flagii JVM
 
@@ -36,11 +38,14 @@ Serwer działa z zalecanymi flagami Aikara dla G1GC dostrojonymi pod 2-rdzeniowy
 
 ### Ustawienia świata
 
-- **Granica świata:** ±2000 na osiach X i Z (promień 2000 od spawnu)
+- **Granica świata:** ±1000 na osiach X i Z (2000×2000, 16 129 chunków wygenerowanych)
 - **Tylko Overworld:** Wymiary Nether i End są wyłączone
-- **Seed świata:** Losowo generowany, ukryty przed graczami
-- **Ochrona spawnu:** Promień 50 bloków (zarządzane przez Purpur)
+- **Seed świata:** `2800725041837543666` (losowy po resecie 2026-07-01)
+- **Stary seed:** `11195220106425106596` (przed resetem)
+- **Ochrona spawnu:** Strefa 50×50 bloków (WorldGuard) — brak PvP, brak niszczenia/stawiania
+- **OP bypass ochrony:** Wyłączony (`disable-bypass-by-default: true`)
 - **Anti-Xray:** Tryb silnika 2 włączony (ukrywa rudy jako kamień w nieodkrytych chunkach)
+- **Max render distance:** 32 chunki (view-distance + simulation-distance)
 
 ---
 
@@ -48,7 +53,7 @@ Serwer działa z zalecanymi flagami Aikara dla G1GC dostrojonymi pod 2-rdzeniowy
 
 ### Pre-generacja świata
 
-Świat jest pre-generowany za pomocą Chunky o promieniu 2000. Działa to jako zadanie w tle i nie wymaga przestoju serwera. Gracze mogą kontynuować grę podczas generowania.
+Świat jest pre-generowany za pomocą Chunky o promieniu 1000 (16 129 chunków). Generowanie zakończone w 100%. Gracze mogą grać bez lagów od generowania nowych chunków.
 
 ### Kopie zapasowe
 
@@ -79,24 +84,25 @@ Kluczowe kategorie pluginów:
 | Kategoria | Pluginy |
 |---|---|
 | **Podstawowa rozgrywka** | EssentialsX, VeinMiner |
-| **Bezpieczeństwo** | AuthMe, GrimAC, CoreProtect, CombatLogX |
+| **Bezpieczeństwo** | AuthMe (premium + offline), GrimAC, CoreProtect, CombatLogX |
+| **Ochrona spawnu** | WorldGuard + WorldEdit |
 | **Udogodnienia** | BetterSleeping, SimpleScore, TAB |
 | **Zarządzanie serwerem** | LuckPerms, Maintenance, AdvancedServerList |
 | **Mapa WWW** | BlueMap |
 | **Międzywersyjność** | ViaVersion |
 | **Świat** | Chunky |
+| **Premium auth** | PacketEvents (weryfikacja kryptograficzna premium)
 
 ---
 
 ## 5. Dostęp graczy
 
-- **Uwierzytelnianie:** Gracze logują się przez hasło AuthMe
-- **Whitelista:** Niewymuszona (każdy z poprawnym auth może dołączyć po rejestracji)
+- **Uwierzytelnianie:** AuthMe z premium auto-login — premium (Mojang) wchodzą bez hasła, non-premium muszą się zarejestrować
+- **Whitelista:** Wymuszona — tylko: EnderMag0220, nuqe_bb, reaperq, Low_Death_Gaming
 - **Ograniczenie krajowe:** Serwer jest ograniczony tylko do Polski (przez CountryBlock) — gracze z innych krajów są blokowani przy próbie połączenia
 - **Wykrywanie VPN:** Włączone — gracze używający VPN/proxy są blokowani
 - **Maks. graczy:** 20
 
----
 
 ## 6. Przegląd komend
 
@@ -109,7 +115,7 @@ Gracze mają dostęp do wybranego zestawu komend przez LuckPerms, głównie z Es
 | `/spawn` | Powrót do spawnu |
 | `/msg`, `/reply` | Prywatne wiadomości |
 | `/mail` | Wiadomości offline |
-| `/back` | Powrót do ostatniego miejsca śmierci |
+| ~~`/back`~~ | ❌ Wyłączone (Essentials disabled-commands + LP negatywna perm) |
 | `/list` | Gracze online |
 | `/help` | Pomoc komend |
 | `/rules` | Zasady serwera |
@@ -123,3 +129,6 @@ Komendy admina są chronione przez permisje LuckPerms. Dostępne dla opów/admin
 - `/lp` — Zarządzanie permisjami LuckPerms
 - `/gamemode` — Zmiana trybu gry
 - `/vanish` — Niewidzialność
+- `/echest` — Ender chest (dostępne też dla zwykłych graczy)
+- `//wand`, `//pos1`, `//pos2` — WorldEdit selekcja (dla adminów)
+- `/rg define`, `/rg flag` — WorldGuard zarządzanie regionami
