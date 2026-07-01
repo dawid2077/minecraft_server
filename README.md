@@ -41,11 +41,11 @@
 | Krok | Opis |
 |---|---|
 | 1️⃣ | Dodaj serwer: **`79.76.97.43`** (port domyślny) |
-| 2️⃣ | **Konto premium:** Wejdziesz automatycznie — brak hasła |
-| 2️⃣ | **Konto non-premium:** `/register <hasło> <hasło>` |
-| 3️⃣ | Weź zestaw startowy: `/kit tools` |
-| 4️⃣ | Znajdź miejsce na bazę i ustaw dom: `/sethome` |
-| 5️⃣ | Sprawdź mapę online: BlueMap (port 8100) |
+| 2️⃣ | Rejestracja (pierwszy raz): `/register <hasło> <hasło>` |
+| 2️⃣ | Logowanie (kolejne wizyty): `/login <hasło>` |
+| 3️⃣ | Zmiana hasła: `/changepassword <stare> <nowe>` |
+| 4️⃣ | Weź zestaw startowy: `/kit tools` |
+| 5️⃣ | Znajdź miejsce na bazę i ustaw dom: `/sethome` |
 
 ---
 
