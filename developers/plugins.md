@@ -260,3 +260,76 @@ Okresowe wydarzenia zrzutów, które spawnią skrzynie z zaopatrzeniem w losowyc
 ### DiscordSRV
 
 Mostkuje czat w grze z kanałem Discord. (Wymaga tokena bota i konfiguracji ID kanału — obecnie oczekuje na konfigurację.)
+
+---
+
+## Ochrona i edycja świata
+
+### WorldEdit (7.3.15)
+
+Edytor świata w grze. Używany głównie do selekcji obszarów dla WorldGuard.
+
+**Instalacja:** Ściągnięty z Modrinth, wymagany przez WorldGuard.
+
+### WorldGuard (7.0.14)
+
+Ochrona regionów i flagi.
+
+**Regiony:**
+- **spawn** — 50×50 bloków (od -25 do 25 w X/Z, od 0 do 320 w Y)
+
+**Flagi regionu spawn:**
+| Flaga | Wartość |
+|---|---|
+| `pvp` | `deny` |
+| `block-break` | `deny` |
+| `block-place` | `deny` |
+| `use` | `deny` |
+
+**OP bypass:** Wyłączony (`disable-bypass-by-default: true`) — ochrona działa na wszystkich, nawet na operatorów.
+
+---
+
+## Wsparcie dla uwierzytelniania
+
+### PacketEvents (2.13.0)
+
+Biblioteka do przechwytywania pakietów sieciowych. Zainstalowana wyłącznie dla AuthMe premium crypto verification.
+
+**Zależności:** AuthMe (offline-mode bez proxy)
+
+---
+
+## Zmiany konfiguracyjne (2026-07-01)
+
+### CombatLogX
+- Anti-logout timer: 10s → 20s (`default-timer: 20`)
+- **Glowing** expansion: wyłączony (config: `enabled: false`) — nie ma świecenia przez ściany
+- **ActionBar** expansion: wyłączony (config: `enabled: false`)
+- **MobTagger** expansion: mob-list = `[]` — tylko PvP taguje, moby nie
+
+### EssentialsX
+- Teleport delay: 0s → 10s
+- `/back` — wyłączony (disabled-commands + luckperms negatywna perm)
+- `essentials.enderchest` — dodany do grupy default (wszyscy gracze)
+
+### TAB
+- Scoreboard: włączony z datą, animacją, online count, rank, ping, world
+- Tab list header/footer: czas, ping, memory, "Odwiedź autora dawidm.com", "Sponsor serwera: https://codeeurope.pl/"
+- Animacja Welcome: 100 losowych powitań z "❤️ kochamy Ante i Kolczyńska"
+- Vanish: `display-vanished-players-as-spectators: true`
+
+### AuthMe
+- Premium mode: włączony (`enablePremium: true`)
+- Premium gracze (Mojang/Microsoft) logują się bez hasła
+- Non-premium gracze wymagają rejestracji
+
+### BetterSleeping
+- Action bar: wyłączony (`enable-actionbar: false`)
+
+### CoreProtect
+- Baza danych: zresetowana (uszkodzona po masowych spawnach entity, 2026-07-01)
+- Nowa baza: 204KB, czysta
+
+### Whitelist
+- Włączona, tylko 4 graczy: EnderMag0220, nuqe_bb, reaperq, Low_Death_Gaming
