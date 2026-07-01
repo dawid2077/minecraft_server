@@ -97,7 +97,14 @@ Kluczowe kategorie pluginów:
 
 ## 5. Dostęp graczy
 
-- **Uwierzytelnianie:** AuthMe z premium auto-login — premium (Mojang) wchodzą bez hasła, non-premium muszą się zarejestrować
+- **Uwierzytelnianie:** AuthMe — wszyscy muszą się logować hasłem (premium też)
+- **Premium wyłączone:** `enablePremium: false`
+- **Procedura logowania:**
+  1. Rejestracja: `/register <hasło> <hasło>`
+  2. Logowanie: `/login <hasło>`
+  3. Zmiana hasła: `/changepassword <stare> <nowe>`
+- **Hasła tymczasowe:**
+  - `nuqe_bb` → `test123`
 - **Whitelista:** Wymuszona — tylko: EnderMag0220, nuqe_bb, reaperq, Low_Death_Gaming
 - **Ograniczenie krajowe:** Serwer jest ograniczony tylko do Polski (przez CountryBlock) — gracze z innych krajów są blokowani przy próbie połączenia
 - **Wykrywanie VPN:** Włączone — gracze używający VPN/proxy są blokowani
