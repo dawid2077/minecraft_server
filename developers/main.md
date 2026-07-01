@@ -103,19 +103,6 @@ Kluczowe kategorie pluginów:
 - **Wykrywanie VPN:** Włączone — gracze używający VPN/proxy są blokowani
 - **Maks. graczy:** 20
 
-### Znani gracze (OP + whitelist)
-
-- EnderMag0220 (właściciel)
-- nuqe_bb
-- reaperq
-- Low_Death_Gaming
-- Yankezz_ (OP, nie na whitelist)
-- EnderMag0220 (OP, nie na whitelist)
-- Barakuda_opar (OP, nie na whitelist)
-- endermag0202 (OP, nie na whitelist)
-- Whopper_Junior2 (OP, nie na whitelist)
-
----
 
 ## 6. Przegląd komend
 
@@ -126,7 +113,6 @@ Gracze mają dostęp do wybranego zestawu komend przez LuckPerms, głównie z Es
 | `/home`, `/sethome` | Osobiste domy |
 | `/tpa`, `/tpahere`, `/tpaccept`, `/tpdeny` | Prośby o teleportację |
 | `/spawn` | Powrót do spawnu |
-| `/kit` | Zestawy startowe (narzędzia itp.) |
 | `/msg`, `/reply` | Prywatne wiadomości |
 | `/mail` | Wiadomości offline |
 | ~~`/back`~~ | ❌ Wyłączone (Essentials disabled-commands + LP negatywna perm) |

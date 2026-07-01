@@ -4,6 +4,7 @@
 
 ---
 
+#Autor: https://dawidm.com/
 ## ⚡ Szybkie informacje
 
 | | |
